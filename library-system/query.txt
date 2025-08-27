@@ -1,0 +1,120 @@
+CREATE TABLE category(
+  category_id SERIAL PRIMARY KEY,
+  category_name VARCHAR (55) NOT NULL
+);
+
+CREATE TABLE librarian(
+  librarian_id SERIAL PRIMARY KEY,
+  librarian_name VARCHAR (95) NOT NULL
+); CREATE TABLE member(
+  member_id SERIAL PRIMARY KEY,
+  member_name VARCHAR (95) NOT NULL
+);
+
+CREATE TABLE book(
+  book_id SERIAL PRIMARY KEY,
+  book_title VARCHAR (255) NOT NULL,
+  book_author VARCHAR (95) NOT NULL,
+  category_id INT REFERENCES category(category_id)
+);
+
+CREATE TABLE book_shelf(
+  shelf_id SERIAL PRIMARY KEY,
+  category_name VARCHAR (55),
+  book_id INT REFERENCES book(book_id)
+);
+
+CREATE TABLE borrowing(
+  borrow_id SERIAL PRIMARY KEY,
+  book_id INT REFERENCES book(book_id),
+  member_id INT REFERENCES member(member_id),
+  librarian_id INT REFERENCES librian(librarian_id),
+  created_at timestamp
+);
+
+INSERT INTO category (category_name)
+VALUES
+  ('Fantasy'),
+  ('History'),
+  ('Romance'),
+  ('Biography'),
+  ('Mystery'),
+  ('Kids'),
+  ('Sci-fi'),
+  ('Poetry'),
+  ('Horror'),
+  ('Novel')
+;
+
+INSERT INTO librarian (librarian_name)
+VALUES
+  ('Isaac'),
+  ('Chloe'),
+  ('Julian'),
+  ('Ruby'),
+  ('Elijah'),
+  ('Nora'),
+  ('Sebastian'),
+  ('Layla'),
+  ('Gabriel'),
+  ('Stella')
+;
+
+INSERT INTO member (member_name)
+VALUES
+  ('Olivia'),
+  ('Ethan'),
+  ('Maya'),
+  ('Liam'),
+  ('Zoe'),
+  ('Noah'),
+  ('Ava'),
+  ('Lucas'),
+  ('Emma'),
+  ('Caleb')
+;
+
+INSERT INTO book (book_title, book_author, category_id)
+VALEUES
+  ('Watership Down', 'Richard Adams', 1),
+  ('1776', 'David McCullough', 2),
+  ('Say Nothing', 'Patrick Radden Keefe', 2),
+  ('Circe', 'Madeline Miller', 1),
+  ('Jade City', 'Fonda Lee', 1),
+  ('Tigana', 'Guy Gavriel Kay', 1),
+  ('Twilight', 'Stephenie Meyer', 3),
+  ('Dune', 'Frank Herbert', 7),
+  ('Ariel', 'Sylvia Plath', 8),
+  ('Holes', 'Louis Sachar', 6),
+  ('1984', 'George Orwell', 10)
+;
+
+INSERT INTO book_shelf (category_name, book_id)
+VALUES
+  ('Fantasy', 1),
+  ('History', 2),
+  ('History', 3),
+  ('Fantasy', 4),
+  ('Fantasy', 5),
+  ('Fantasy', 6),
+  ('Romance', 7),
+  ('Sci-fi', 8),
+  ('Poetry', 9),
+  ('Kids', 10),
+  ('Novel', 11)
+;
+
+INSERT INTO borrowing (book_id, member_id, librarian_id)
+VALUES
+  (1, 1, 1, '2016-06-22 19:10:25'),
+  (2, 2, 2, '2016-06-23 19:10:25'),
+  (4, 4, 3, '2016-06-24 19:10:25'),
+  (5, 5, 5, '2016-06-25 19:10:25'),
+  (6, 6, 6, '2016-06-26 19:10:25'),
+  (7, 7, 7, '2016-06-27 19:10:25'),
+  (8, 8, 8, '2016-06-28 19:10:25'),
+  (9, 9, 9, '2016-06-29 19:10:25'),
+  (10, 10, 10, '2016-07-02 19:10:25'),
+  (3, 3, 3, '2016-07-03 19:10:25')
+;
+
