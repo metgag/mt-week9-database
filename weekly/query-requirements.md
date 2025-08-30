@@ -1,0 +1,16 @@
+## Used Query List
+- [x] Login
+- [x] Register
+- [x] Get Upcoming Movie
+- [x] Get Popular Movie
+- [x] Get Movie w/ Pagination
+- [ ] Filter Movie by Name and Genre w/ pagination
+- [x] Get Schedule
+- [ ] Get Movie Detail
+- [x] Create Order
+- [x] Get Profile
+- [ ] Get History
+- [x] Edit Profile
+- [ ] Get All Movie (Admin)
+- [ ] Delete Movie (Admin)
+- [ ] Edit Movie (Admin)
