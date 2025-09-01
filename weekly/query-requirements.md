@@ -6,6 +6,7 @@
 - [x] Get Movie w/ Pagination
 - [x] Filter Movie by Name and Genre w/ pagination
 - [x] Get Schedule
+- [ ] Get Seat Sold
 - [x] Get Movie Detail
 - [x] Create Order
 - [x] Get Profile
