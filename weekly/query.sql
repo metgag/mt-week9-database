@@ -39,7 +39,21 @@ WHERE
 LIMIT 20 OFFSET 0;
 
 -- get schedule
-SELECT * FROM cinema_schedule;
+SELECT s.id, m.title, s.date, t.time, l.location, c.name
+FROM 
+  cinema_schedule AS s
+JOIN
+  movies AS m
+  ON s.movie_id = m.id
+JOIN
+  jam_tayang AS t
+  ON s.time_id = t.id
+JOIN
+  lokasi_tayang AS l
+  ON s.location_id = l.id
+JOIN
+  cinema_tayang AS c
+  ON s.cinema_id = c.id;
 
 -- get movie detail
 SELECT
