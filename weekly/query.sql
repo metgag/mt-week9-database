@@ -55,6 +55,13 @@ JOIN
   cinema_tayang AS c
   ON s.cinema_id = c.id;
 
+-- get seat sold
+SELECT s.pos, s.id
+FROM seats AS s
+JOIN
+  books_seats AS b ON s.id = b.seat_id
+;
+
 -- get movie detail
 SELECT
   m.title, m.poster_path, m.backdrop_path, m.release_date, m.runtime, m.overview, d.name "director", mg.genre_id
