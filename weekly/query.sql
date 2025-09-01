@@ -64,6 +64,12 @@ FROM personal_info
 WHERE
     user_id = 1;
 
+-- get history
+SELECT *
+FROM book_ticket
+WHERE
+  user_id = 1;
+
 -- update profile
 UPDATE
     personal_info
