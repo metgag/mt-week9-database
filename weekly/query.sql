@@ -28,11 +28,32 @@ SELECT *
 FROM movies
     LIMIT 20 OFFSET 0; 
 
+-- filter movie by name and genre w/pagination
+SELECT title, genre_id
+FROM movies
+INNER JOIN movies_genre
+ON id = movie_id
+WHERE
+  title ILIKE ('%%') AND
+  genre_id = 53
+LIMIT 20 OFFSET 0;
+
 -- get schedule
 SELECT * FROM cinema_schedule;
 
+-- get movie detail
+SELECT
+  m.title, m.poster_path, m.backdrop_path, m.release_date, m.runtime, m.overview, d.name "director", mg.genre_id
+FROM
+  movies AS m
+JOIN
+  directors AS d ON m.director_id = d.id
+JOIN
+  movies_genre AS mg ON m.id = mg.movie_id
+WHERE m.id = 3;
+
 -- create order
-INSERT INTO 
+INSERT INTO
     book_ticket (user_id, cinema_id, payment_method, total, is_paid)
 VALUES
     (1, 1, 'BCA', 30, false);
