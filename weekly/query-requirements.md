@@ -12,6 +12,6 @@
 - [x] Get Profile
 - [x] Get History
 - [x] Edit Profile
-- [ ] Get All Movie (Admin)
-- [ ] Delete Movie (Admin)
-- [ ] Edit Movie (Admin)
+- [x] Get All Movie (Admin)
+- [x] Delete Movie (Admin)
+- [x] Edit Movie (Admin)
