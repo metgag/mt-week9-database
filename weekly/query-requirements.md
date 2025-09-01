@@ -4,9 +4,9 @@
 - [x] Get Upcoming Movie
 - [x] Get Popular Movie
 - [x] Get Movie w/ Pagination
-- [ ] Filter Movie by Name and Genre w/ pagination
+- [x] Filter Movie by Name and Genre w/ pagination
 - [x] Get Schedule
-- [ ] Get Movie Detail
+- [x] Get Movie Detail
 - [x] Create Order
 - [x] Get Profile
 - [ ] Get History
