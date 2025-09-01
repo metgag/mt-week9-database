@@ -112,3 +112,17 @@ SET
     last_name = 'Gagah'
 WHERE
     user_id = 1;
+
+-- get all movie (admin)
+SELECT *
+FROM movies;
+
+-- delete movie (admin)
+DELETE FROM movies
+WHERE
+  id = 1;
+
+-- edit movie (admin)
+UPDATE movies
+SET title = 'New title'
+WHERE id = 1;
