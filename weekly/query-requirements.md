@@ -9,7 +9,7 @@
 - [x] Get Movie Detail
 - [x] Create Order
 - [x] Get Profile
-- [ ] Get History
+- [x] Get History
 - [x] Edit Profile
 - [ ] Get All Movie (Admin)
 - [ ] Delete Movie (Admin)
